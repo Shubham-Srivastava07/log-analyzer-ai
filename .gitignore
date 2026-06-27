@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.ssh/
+.git-credentials
+.viminfo
+.bash_history
+.gitconfig
+*.log
