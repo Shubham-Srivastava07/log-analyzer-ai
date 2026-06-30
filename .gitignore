@@ -2,9 +2,16 @@ venv/
 __pycache__/
 *.pyc
 .env
+
 .ssh/
 .git-credentials
 .viminfo
 .bash_history
 .gitconfig
+
+# Ignore log files everywhere
 *.log
+
+# Except sample logs used for the project
+!sample_logs/
+!sample_logs/*.log
