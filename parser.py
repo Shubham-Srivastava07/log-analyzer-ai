@@ -7,7 +7,7 @@ def get_nginx_error_type(error_msg):
     return "unknown"
 
 def parse_nginx_log(line):
-    pattern = r'(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) \[error\] .*?: (?P<error>.*)'
+    pattern = r'(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) \[(?P<severity>.*?)\] (?P<error>.*)'
     match = re.search(pattern, line)
     if match:
         error_msg = match.group('error')
