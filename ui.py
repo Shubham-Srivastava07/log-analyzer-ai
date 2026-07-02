@@ -9,14 +9,15 @@ def show_summary_cards(total, error_count, health):
     col1, col2, col3 = st.columns(3)
     col1.metric("Total Logs", total)
     col2.metric("Errors", error_count)
+    col3.metric("Health", health)
     
-    # Health status ke liye color coding
-    if "Critical" in health:
-        col3.error(health)
+def show_health_badge(health):
+    if "Healthy" in health:
+        st.markdown("### Status: 🟢 Healthy")
     elif "Warning" in health:
-        col3.warning(health)
+        st.markdown("### Status: 🟡 Warning")
     else:
-        col3.success(health)
+        st.markdown("### Status: 🔴 Critical")
 
 def show_table(title, data):
     st.subheader(title)
